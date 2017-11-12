@@ -16,6 +16,7 @@ export REFS_URL="https://storage.googleapis.com/crisp-mctp/release/refs_${REFS_V
 export CODAC_URL="https://storage.googleapis.com/crisp-mctp/release/codac_${CODAC_VER}.tar.gz"
 export CRISP_URL="https://storage.googleapis.com/crisp-mctp/release/crisp_${CRISP_VER}.tar.gz"
 export GXCORE_URL="https://storage.googleapis.com/crisp-mctp/release/gxcore_docker_${GXCORE_VER}.tar.gz"
-export BUILD_NAME=build_rel2
+export BUILD_TAG=rel2
+export BUILD_NAME=build_$BUILD_TAG
 
 bash context/build_all.sh
