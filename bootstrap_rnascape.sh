@@ -8,14 +8,14 @@ export NCORES=64
 export BUILD_TAG=relx
 export BUILD_NAME=build_$BUILD_TAG
 export BUILD_GXUSER=true
-export BUILD_REFS=false
-export BUILD_TOOLS=false
-export BUILD_INDICES=false
-export BUILD_BIOC=false
-export BUILD_CRISP=false
-export BUILD_CODAC=false
-export BUILD_RELEASE=false
-export BUILD_TESTCRISP=false
+export BUILD_REFS=true
+export BUILD_TOOLS=true
+export BUILD_INDICES=true
+export BUILD_BIOC=true
+export BUILD_CRISP=true
+export BUILD_CODAC=true
+export BUILD_RELEASE=true
+export BUILD_TESTCRISP=true
 
 ## settings
 export GXCORE_VER=1.6.5
