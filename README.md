@@ -12,16 +12,19 @@ In that process these steps will be executed:
 The process will take approx. 8h to finish. The final output is a large "refs" folder which contains all the references, software, libraries etc. and a tar file docker image `gx${USER}`.
 
 1. Make sure the following dependencies are installed:
+```
 - bash
 - git
 - wget
 - pigz (important not always installed!)
 - docker
 - tar
+```
 
 2. The user shoud have also full permissions to use docker tested on version 1.13.1 and 17.05.0-ce
 
 RNAScpae bundles great software by other people:
+```
 - STAR
 - featureCounts
 - samtools
@@ -38,6 +41,7 @@ RNAScpae bundles great software by other people:
 - FastQC
 - bedtools
 - seqtk
+```
 
 ## Installation instructions
 
@@ -73,4 +77,28 @@ export BUILD_TESTCRISP=true
 3. Build (6-8h)
 ```
 bash bootstrap_rnascape.sh
-````
+```
+
+4. Inspect the output of the `build_$BUILD_TAG` directory:
+```
+#### final output needed to run RNAscape
+## the customized docker image
+gx${USER}_docker_1.6.5.tar.gz
+## the complete "refs" folder
+rnascape_relx.tar.gz # tared 
+refs # un-tared
+## example CRISP/CODAC test-runs 
+test.codac
+test.crisp
+```
+
+The following files can be deleted:
+```
+## downloaded FASTQ files for test
+repo
+## downloaded files (can be removed)
+refs_$VER.tar.gz
+bioc_$VER.tar.gz
+codac_$VER.tar.gz
+crisp_$VER.tar.gz
+```
