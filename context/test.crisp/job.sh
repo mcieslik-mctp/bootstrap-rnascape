@@ -3,7 +3,7 @@ HERE="$(readlink -f $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ))" && cd $H
 
 ## SETTINGS
 export NCORES=$NCORES
-export MEMORY=4
+export MEMORY=$MEMORY
 export SETTINGS="-lib_merge lane --debug"
 export LIBSHEET=lib_sheet.tsv
 export PYENV=crisp

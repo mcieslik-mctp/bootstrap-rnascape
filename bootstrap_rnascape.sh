@@ -4,9 +4,15 @@ export BOOT="$(readlink -f $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ))"
 ## build parameters
 export USER=$USER
 export USERID=`id -u`
-export NCORES=64
+## valid combinations for NCORES/MEMORY are:
+## 8/12, 8/16, 16/6, 16/8, 32/4, 32/8, 64/4, 64/8
+## i.e. at least 96GB are needed
+export NCORES=32
+export MEMORY=8
 export BUILD_TAG=relx
 export BUILD_NAME=build_$BUILD_TAG
+
+## build stages
 export BUILD_GXUSER=true
 export BUILD_REFS=true
 export BUILD_TOOLS=true
