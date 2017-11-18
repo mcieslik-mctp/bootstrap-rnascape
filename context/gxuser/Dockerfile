@@ -1,4 +1,4 @@
-FROM gxcore:latest
+FROM gxcore:temp
 
 # USERS
 ARG user

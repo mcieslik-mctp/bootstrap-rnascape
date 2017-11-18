@@ -8,7 +8,7 @@ export SETTINGS=""
 export LIBSHEET=lib_sheet.tsv
 
 ## DO NOT CHANGE
-export DOCKER_IMAGE="gx${USER}:latest"
+export DOCKER_IMAGE="gx${USER}:$GXCORE_VER"
 export USRID=$(id -u)
 export JOB=$(basename $HERE)
 export JOBDIR=$HERE

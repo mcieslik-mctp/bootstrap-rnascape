@@ -6,7 +6,9 @@ cd $BOOT/$BUILD_NAME
 if [ "$BUILD_GXUSER" = true ]; then
     wget -N $GXCORE_URL
     docker load --input gxcore_docker_${GXCORE_VER}.tar.gz
+    docker tag gxcore:${GXCORE_VER} gxcore:temp 
     docker build -t gx${USER}:$GXCORE_VER --build-arg user=$USER --build-arg userid=$USERID $BOOT/context/gxuser
+    docker rmi gxcore:temp
 fi
 
 ## BUILD REFS
@@ -24,7 +26,7 @@ if [ "$BUILD_TOOLS" = true ]; then
            -e ALIGN_NAME=$ALIGN_NAME \
            -v $BOOT/$BUILD_NAME/refs:/refs \
            -v $BOOT/context/:/context \
-           gx${USER}:latest /context/build_tools.sh
+           gx${USER}:$GXCORE_VER /context/build_tools.sh
 fi
 
 ## BUILD REFS
@@ -36,7 +38,7 @@ if [ "$BUILD_INDICES" = true ]; then
            -e ALIGN_NAME=$ALIGN_NAME \
            -v $BOOT/$BUILD_NAME/refs:/refs \
            -v $BOOT/context/:/context \
-           gx${USER}:latest /context/build_indices.sh
+           gx${USER}:$GXCORE_VER /context/build_indices.sh
 fi
 
 ## BUILD BIOC
@@ -67,7 +69,7 @@ if [ "$BUILD_CODAC" = true ]; then
            -v $BOOT/$BUILD_NAME/refs:/refs \
            -v $BOOT/context/:/context \
            -v $BOOT/$BUILD_NAME/codac:/codac \
-           gx${USER}:latest /context/build_codac.sh
+           gx${USER}:$GXCORE_VER /context/build_codac.sh
 fi
 
 ## release
