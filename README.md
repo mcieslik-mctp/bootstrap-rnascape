@@ -4,12 +4,12 @@ The following procedure will result in the creation of a working RNAScape instal
 
 In that process these steps will be executed:
 - download all required reference files, images, and code
-- build a docker image capable of executing rnascape
+- build a docker image capable of executing RNAScape
 - build indices/caches for samtools, STAR, Minimap2, and GMAP
 - install CRISP and CODAC
 - test CRISP and CODAC
 
-The process will take approx. 8h to finish. The final output is a large "refs" folder which contains all the references, software, libraries etc. and a tar file docker image `gx${USER}`.
+The process will take approx. 8h to finish. The final output is a large "refs" folder which contains all the references, software, libraries etc. and a docker image `gx${USER}`. The recommended hardware has at least 8 cores and 96GB of RAM, although very rarely (<<1%) more than 64GB is needed.
 
 1. Make sure the following dependencies are installed:
 ```
@@ -23,7 +23,7 @@ The process will take approx. 8h to finish. The final output is a large "refs" f
 
 2. The user shoud have also full permissions to use docker tested on version 1.13.1 and 17.05.0-ce
 
-RNAScpae bundles great software by other people:
+RNAScape bundles great software by other people:
 ```
 - STAR
 - featureCounts
