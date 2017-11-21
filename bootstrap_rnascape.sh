@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 export BOOT="$(readlink -f $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ))"
 
 ## build parameters
@@ -24,10 +24,10 @@ export BUILD_RELEASE=true
 export BUILD_TESTCRISP=true
 
 ## settings
-export GXCORE_VER=1.6.5
-export REFS_VER=1.0.5
+export GXCORE_VER=1.6.6
+export REFS_VER=1.0.6
 export CODAC_VER=3.4.1
-export CRISP_VER=2.4.3
+export CRISP_VER=2.5.0
 export BIOC_VER=161117
 export CODAC_GTF='$REFS/gtf/motr.v2/motr.v2-full.gtf'
 export CODAC_GMAP='$REFS/indices/gmap/hg38.rna'
