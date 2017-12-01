@@ -6,7 +6,6 @@ export NCORES=$NCORES
 export MEMORY=$MEMORY
 export SETTINGS="-lib_merge lane --debug"
 export LIBSHEET=lib_sheet.tsv
-export PYENV=crisp
 
 ## DO NOT CHANGE
 export DOCKER_IMAGE="gx${USER}:$GXCORE_VER"
@@ -29,7 +28,6 @@ echo -e "docker_image:\t"$DOCKER_IMAGE >> $JOBLOG
 CONTID=$(docker run -d --privileged \
     -e NCORES="${NCORES}" -e MEMORY="${MEMORY}" \
     -e SETTINGS="${SETTINGS}" -e LIBSHEET="${LIBSHEET}" \
-    -e PYENV="${PYENV}" \
     -v $JOBDIR:/job \
     -v $REFDIR:/refs \
     -v $REFDIR/crisp:/code \

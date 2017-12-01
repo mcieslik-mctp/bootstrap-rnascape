@@ -1,21 +1,7 @@
 #!/usr/bin/env bash
 # workaround (silent if fails)
 sudo su -c 'echo "kernel.shmmax = 31000000000" >> /etc/sysctl.conf; echo "kernel.shmall = 31000000000" >> /etc/sysctl.conf; /sbin/sysctl -p' > /dev/null 2>&1
-
-# samtools for CRAM
-export REF_PATH=/refs/cache/hts-ref/%2s/%2s/%s
-export REF_CACHE=/refs/cache/hts-ref/%2s/%2s/%s
-
-# R
-export R_LIBS_USER=/code/libs/r
-
-# Python
-export WORKON_HOME=/code/libs/python
-source /etc/bash_completion.d/virtualenvwrapper
-workon $PYENV
-
-# exports
-export PATH=/code/bin:/code/bin/bbmap:$PATH
+export PATH=/code/bin:$PATH
 
 cd /job
 /usr/bin/time -v /code/pipeline.py \
