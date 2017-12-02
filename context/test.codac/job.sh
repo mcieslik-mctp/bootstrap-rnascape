@@ -2,8 +2,8 @@
 HERE="$(readlink -f $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ))" && cd $HERE
 
 ## SETTINGS
-export NCORES=16
-export MEMORY=8
+export NCORES=$NCORES
+export MEMORY=$MEMORY
 export SETTINGS=""
 export LIBSHEET=lib_sheet.tsv
 

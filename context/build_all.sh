@@ -79,8 +79,8 @@ if [ "$BUILD_RELEASE" = true ]; then
     pigz -p $NCORES $(pwd)/gx${USER}_docker_$GXCORE_VER.tar
 fi
 
-## test crisp
-if [ "$BUILD_TESTCRISP" = true ]; then
+## test crisp/codac
+if [ "$BUILD_TEST" = true ]; then
     export REFDIR=$BOOT/$BUILD_NAME/refs
     export REPDIR=$BOOT/$BUILD_NAME/repo
     mkdir -p $BOOT/$BUILD_NAME/repo
@@ -90,8 +90,10 @@ if [ "$BUILD_TESTCRISP" = true ]; then
     wget -N https://storage.googleapis.com/crisp-mctp/repo/mctp_SI_18676_HTW2NBCXY_0_1.fq.gz
     wget -N https://storage.googleapis.com/crisp-mctp/repo/mctp_SI_18676_HTW2NBCXY_0_2.fq.gz
     cp -r $BOOT/context/test.crisp $BOOT/$BUILD_NAME
+    chmod 755 $BOOT/$BUILD_NAME/test.crisp/*.sh
     bash $BOOT/$BUILD_NAME/test.crisp/job.sh
     export REPDIR=$BOOT/$BUILD_NAME/test.crisp/out
     cp -r $BOOT/context/test.codac $BOOT/$BUILD_NAME
+    chmod 755 $BOOT/$BUILD_NAME/test.codac/*.sh
     bash $BOOT/$BUILD_NAME/test.codac/job.sh
 fi

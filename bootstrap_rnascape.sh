@@ -9,24 +9,24 @@ export USERID=`id -u`
 ## i.e. at least 96GB are needed
 export NCORES=64
 export MEMORY=4
-export BUILD_TAG=relz
+export BUILD_TAG=rel3
 export BUILD_NAME=build_$BUILD_TAG
 
 ## build stages
 export BUILD_GXUSER=true
-export BUILD_REFS=false
-export BUILD_TOOLS=false
-export BUILD_INDICES=false
-export BUILD_BIOC=false
-export BUILD_CRISP=false
-export BUILD_CODAC=false
-export BUILD_RELEASE=false
-export BUILD_TESTCRISP=true
+export BUILD_REFS=true
+export BUILD_TOOLS=true
+export BUILD_INDICES=true
+export BUILD_BIOC=true
+export BUILD_CRISP=true
+export BUILD_CODAC=true
+export BUILD_RELEASE=true
+export BUILD_TEST=true
 
 ## settings
 export GXCORE_VER=1.6.6
 export REFS_VER=1.0.6
-export CODAC_VER=3.4.1
+export CODAC_VER=3.4.3
 export CRISP_VER=2.5.0
 export BIOC_VER=161117
 export CODAC_GTF='$REFS/gtf/motr.v2/motr.v2-full.gtf'
@@ -40,5 +40,7 @@ export BIOC_URL="https://storage.googleapis.com/crisp-mctp/release/bioc_${BIOC_V
 export CODAC_URL="https://storage.googleapis.com/crisp-mctp/release/codac_${CODAC_VER}.tar.gz"
 export CRISP_URL="https://storage.googleapis.com/crisp-mctp/release/crisp_${CRISP_VER}.tar.gz"
 export GXCORE_URL="https://storage.googleapis.com/crisp-mctp/release/gxcore_docker_${GXCORE_VER}.tar.gz"
+
+chmod 755 $BOOT/context/*.sh
 
 bash context/build_all.sh
